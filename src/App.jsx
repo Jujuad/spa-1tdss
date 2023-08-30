@@ -1,7 +1,9 @@
+import { Outlet } from "react-router-dom";
+
+import logoReact from "./assets/react.svg";
 import Cabecalho from "./Components/Cabecalho";
 import Conteudo from "./Components/Conteudo";
 import Rodape from "./Components/Rodape";
-import logoReact from "./assets/react.svg";
 
 export default function App(){
 
@@ -10,14 +12,15 @@ export default function App(){
 
   let altLogo = "Logomarca da Tecnologia React!"
 
-  return (
+  return(
     <>
-      {/* Crie um cabeçalho com um h1, um titulo e uma lista com 3 itens. */}
-      <Cabecalho/>
-      {/* Crie uma Section com uma div e 3 paragrafos com texto lorem de 3 linhas */}
-      <Conteudo novoProps={novoConteudo} uriLogoReact={logoReact} altLogo={altLogo}/>
-      {/* Crie um rodape com um p e o codigo do simbolo de copyright mais o texto que se segue. "Todos os meus direitos reservados. 2023" */}
-      <Rodape/>
+      {/* Crie um Cabeçalho com um h1 um título e uma lista com 3 itens. */}
+        <Cabecalho/>
+      {/* Crie uma Section com uma div e 3 parágrafos com texto lorem de 3 linhas. */}
+      {/* Passando três props para o componente filho. */}
+        <Outlet/>
+      {/* Crie um rodapé com um p e o código do símbolo de copyright mais o texto que se segue. "Todos os meus direitos reservados. 2023" */}
+        <Rodape/>
     </>
   )
 }
