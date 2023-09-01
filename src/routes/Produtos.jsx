@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom"
-
 import { ListaProdutos } from "../Components/ListaProdutos"
-
 import './Produtos.css';
+import{TiEdit as Editar} from "react-icons/ti"
+import{AiFillDelete as Excluir} from "react-icons/ai"
+
 
 export default function Produtos() {
 
@@ -35,7 +36,7 @@ export default function Produtos() {
                     <td>{produto.id}</td>
                     <td>{produto.nome}</td>
                     <td>{produto.preco}</td>
-                    <td><Link to={`/editar/produtos/${produto.id}`}>Editar</Link> | <Link to={`/excluir/produtos/${produto.id}`}>Excluir</Link></td>
+                    <td><Link to={`/editar/produtos/${produto.id}`}><Editar/> </Link> | <Link to={`/excluir/produtos/${produto.id}`}> <Excluir/> </Link></td>
                  </tr>
             ))}
         </tbody>
